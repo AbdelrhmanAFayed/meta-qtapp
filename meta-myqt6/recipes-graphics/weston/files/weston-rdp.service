@@ -1,0 +1,11 @@
+[Unit]
+Description=Weston with RDP Backend
+After=network.target
+
+[Service]
+ExecStart=/usr/bin/nohup /usr/bin/weston --backend=rdp-backend.so --idle-time=0 --rdp4-key=/etc/weston/rdp4-key.pem --width=1920 --height=1080 > /var/log/weston-rdp.log 2>&1 &
+Restart=always
+RestartSec=5
+
+[Install]
+WantedBy=multi-user.target

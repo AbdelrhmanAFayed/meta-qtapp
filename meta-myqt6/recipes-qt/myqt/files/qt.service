@@ -1,0 +1,12 @@
+[Unit]
+
+
+[Service]
+Type = simple
+ExecStart = /usr/bin/qtapp
+Restart = on-failure
+RestarSec = 5
+
+
+[Install]
+WantedBy = multi-user.target
